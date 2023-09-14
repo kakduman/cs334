@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+IP_ADDRESS=$(hostname -I)
+
+echo $IP_ADDRESS > ${DIR}/ip.md
+
+git commit -am "Update IP address from Raspberry Pi"
+git push
