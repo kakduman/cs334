@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+IP_ADDRESS=$(hostname -I)
+
+echo $IP_ADDRESS > ${DIR}/ip.md
+
+scp ${DIR}/ip.md primary@172.26.83.144:~/Downloads/ip.md

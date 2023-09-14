@@ -1,0 +1,10 @@
+[Unit]
+Description=Upload IP
+
+[Service]
+User=student334
+Group=student334
+ExecStart=/home/student334/cs334/raspberrypi/setup
+
+[Install]
+WantedBy=multi-user.target
