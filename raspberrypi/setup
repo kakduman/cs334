@@ -5,5 +5,6 @@ IP_ADDRESS=$(hostname -I)
 
 echo $IP_ADDRESS > ${DIR}/ip.md
 
+cd ${DIR}
 git commit -am "Update IP address from Raspberry Pi"
 git push
