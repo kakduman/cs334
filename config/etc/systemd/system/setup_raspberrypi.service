@@ -1,10 +1,16 @@
 [Unit]
-Description=Upload IP
+Description=upload the current IP address to github
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 User=student334
 Group=student334
-ExecStart=/home/student334/cs334/raspberrypi/setup
+Type=oneshot
+ExecStartPre=/bin/sh -c 'until ping -c1 github.com; do sleep 1; done;'
+ExecStart=/home/student334/Desktop/CPSC-334/raspberryPi/uploadip
+TimeoutSec=900
+
 
 [Install]
 WantedBy=multi-user.target
